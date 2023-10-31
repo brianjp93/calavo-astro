@@ -1,0 +1,99 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|News+Cycle"
+      rel="stylesheet"
+    />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="shadow-md mb-4 py-2 px-4 bg-zinc-100 flex gap-x-4">
+      <a href="/" style="font-family: Fredericka the Great;">
+        <h2>Home</h2>
+      </a>
+      <a href="/contact/" class="flex">
+        <div class="font-bold my-auto">Contact</div>
+      </a>
+    </div>
+    <div class="container mx-auto px-4">
+      <slot />
+    </div>
+  </body>
+</html>
+<style is:global>
+  :root {
+    --accent: 136, 58, 234;
+    --accent-light: 224, 204, 250;
+    --accent-dark: 49, 10, 101;
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      rgb(var(--accent-light)) 30%,
+      white 60%
+    );
+  }
+  html {
+    background: url("/img/noise.png");
+    margin: 0;
+    font-family: "Roboto", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell",
+      "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  }
+  code {
+    font-family:
+      Menlo,
+      Monaco,
+      Lucida Console,
+      Liberation Mono,
+      DejaVu Sans Mono,
+      Bitstream Vera Sans Mono,
+      Courier New,
+      monospace;
+  }
+  h1 {
+    @apply text-6xl;
+  }
+  h2 {
+    @apply text-5xl;
+  }
+  h3 {
+    @apply text-4xl;
+  }
+  h4 {
+    @apply text-3xl;
+  }
+  h5 {
+    @apply text-2xl;
+  }
+  h6 {
+    @apply text-xl;
+  }
+
+  .card {
+    @apply bg-white p-4 rounded-sm shadow-md;
+  }
+  a {
+    @apply text-blue-700 hover:underline cursor-pointer;
+
+    &:visited {
+      @apply text-purple-600;
+    }
+  }
+</style>
