@@ -25,7 +25,7 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <div class="shadow-md mb-4 py-2 px-4 bg-zinc-100 flex gap-x-4">
+    <div class="shadow-md mb-4 py-2 px-4 bg-zinc-200 flex gap-x-4">
       <a href="/" style="font-family: Fredericka the Great;">
         <h2>Home</h2>
       </a>
@@ -51,10 +51,10 @@ const { title } = Astro.props;
     );
   }
   html {
-    background: url("/img/noise.png");
     margin: 0;
     font-family: "Roboto", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell",
       "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    @apply bg-zinc-100;
   }
   code {
     font-family:
